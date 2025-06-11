@@ -3,7 +3,7 @@
 import { useActionState, useEffect } from "react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
-import { registerUser } from "@/actions/user.actions";
+import { registerUser } from "@/actions/auth.actions";
 
 const RegisterPage = () => {
   const router = useRouter();

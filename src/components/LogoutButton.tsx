@@ -2,7 +2,7 @@
 
 import { useActionState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { logoutUser } from "@/actions/user.actions";
+import { logoutUser } from "@/actions/auth.actions";
 import { toast } from "sonner";
 
 const LogoutButton = () => {
