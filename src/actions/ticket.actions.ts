@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 import { logEvent } from "@/utils/sentry";
 import { getCurrentUser } from "@/lib/current-user";
 
+// Create Ticket
 export async function createTicket(
   prevState: { success: boolean; message: string },
   formData: FormData
@@ -59,6 +60,7 @@ export async function createTicket(
   }
 }
 
+// Get Tickets Owned by Current Logged In User
 export async function getMyTickets() {
   try {
     const user = await getCurrentUser();
@@ -83,6 +85,7 @@ export async function getMyTickets() {
   }
 }
 
+// Get All Tickets Qwned by All Users
 export async function getAllTickets() {
   try {
     const user = await getCurrentUser();
@@ -106,6 +109,7 @@ export async function getAllTickets() {
   }
 }
 
+// Get Single Ticket by ID
 export async function getTicketById(id: string) {
   try {
     const ticket = await prisma.ticket.findUnique({
@@ -165,4 +169,28 @@ export async function closeTicket(
   revalidatePath(`/tickets/${ticketId}`);
 
   return { success: true, message: "Ticket closed successfully" };
+}
+
+// Delete Ticket
+export async function deleteTicket(id: string) {
+  const user = await getCurrentUser();
+
+  if (user?.role !== "admin") {
+    logEvent("Unauthorized ticket deletion attempt", "ticket", {}, "warning");
+
+    return { success: false, message: "You must be an admin to delete a ticket" };
+  }
+
+  try {
+    await prisma.ticket.delete({
+      where: { id: Number(id) },
+    });
+
+    logEvent(`Ticket #${id} deleted successfully`, "ticket", { ticketId: id }, "info");
+
+    revalidatePath("/admin");
+  } catch (error) {
+    logEvent("Error deleting ticket", "ticket", { ticketId: id }, "error", error);
+    return null;
+  }
 }
