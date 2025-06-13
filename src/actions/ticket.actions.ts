@@ -69,7 +69,7 @@ export async function getTickets() {
     }
 
     const tickets = await prisma.ticket.findMany({
-      where: { userId: user.id },
+      where: user.role === "admin" ? undefined : { userId: user.id },
       orderBy: { createdAt: "desc" },
     });
 
