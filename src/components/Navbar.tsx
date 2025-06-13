@@ -21,8 +21,15 @@ const Navbar = async () => {
             </Link>
 
             <Link href='/tickets' className='hover:underline text-gray-700 transition'>
-              View Tickets
+              My Tickets
             </Link>
+
+            {/* Display AAdmin Dashboard link if the user is an admin */}
+            {user.role === "admin" && (
+              <Link href='/admin' className='hover:underline text-gray-700 transition'>
+                Admin Dashboard
+              </Link>
+            )}
 
             <LogoutButton />
           </>
