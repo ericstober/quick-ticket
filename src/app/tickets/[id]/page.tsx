@@ -4,13 +4,25 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPriorityClass } from "@/utils/ui";
 import CloseTicketButton from "@/components/CloseTicketButton";
+import { getCurrentUser } from "@/lib/current-user";
+import { redirect } from "next/navigation";
 
 const TicketDetailsPage = async (props: { params: Promise<{ id: string }> }) => {
+  const user = await getCurrentUser();
+
+  if (!user) {
+    redirect("/login");
+  }
+
   const { id } = await props.params;
   const ticket = await getTicketById(id);
 
   if (!ticket) {
     notFound();
+  }
+
+  if (ticket.userId !== user.id) {
+    redirect("/tickets");
   }
 
   logEvent("Viewing ticket details", "ticket", { ticketId: ticket.id }, "info");
