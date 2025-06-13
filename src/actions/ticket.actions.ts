@@ -59,7 +59,7 @@ export async function createTicket(
   }
 }
 
-export async function getTickets() {
+export async function getMyTickets() {
   try {
     const user = await getCurrentUser();
 
@@ -69,7 +69,30 @@ export async function getTickets() {
     }
 
     const tickets = await prisma.ticket.findMany({
-      where: user.role === "admin" ? undefined : { userId: user.id },
+      where: { userId: user.id },
+      orderBy: { createdAt: "desc" },
+    });
+
+    logEvent("Fetched ticket list", "ticket", { count: tickets.length }, "info");
+
+    return tickets;
+  } catch (error) {
+    logEvent("Error fetching tickets", "ticket", {}, "error", error);
+
+    return [];
+  }
+}
+
+export async function getAllTickets() {
+  try {
+    const user = await getCurrentUser();
+
+    if (!user) {
+      logEvent("Unauthorized access to ticket list", "ticket", {}, "warning");
+      return [];
+    }
+
+    const tickets = await prisma.ticket.findMany({
       orderBy: { createdAt: "desc" },
     });
 
