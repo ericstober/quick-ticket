@@ -1,4 +1,4 @@
-import { getTickets } from "@/actions/ticket.actions";
+import { getMyTickets } from "@/actions/ticket.actions";
 import { getCurrentUser } from "@/lib/current-user";
 import { redirect } from "next/navigation";
 import TicketItem from "@/components/TicketItem";
@@ -10,7 +10,7 @@ const TicketsPage = async () => {
     redirect("/login");
   }
 
-  const tickets = await getTickets();
+  const tickets = await getMyTickets();
 
   return (
     <div className='min-h-screen bg-blue-50 p-8'>
