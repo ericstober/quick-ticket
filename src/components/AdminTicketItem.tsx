@@ -1,6 +1,7 @@
 import type { Ticket } from "@/generated/prisma";
 import { getPriorityClass } from "@/utils/ui";
 import Link from "next/link";
+import DeleteTicketButton from "./DeleteTicketButton";
 
 type TicketItemProps = {
   ticket: Ticket;
@@ -26,6 +27,8 @@ const AdminTicketItem = ({ ticket }: TicketItemProps) => {
         <div className='text-sm text-gray-500'>
           Priority: <span className={getPriorityClass(ticket.priority)}>{ticket.priority}</span>
         </div>
+
+        <DeleteTicketButton ticketId={ticket.id} />
 
         <Link
           href={`/tickets/${ticket.id}`}

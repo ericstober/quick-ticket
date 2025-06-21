@@ -172,7 +172,7 @@ export async function closeTicket(
 }
 
 // Delete Ticket
-export async function deleteTicket(id: string) {
+export async function deleteTicket(id: string): Promise<{ success: boolean; message: string }> {
   const user = await getCurrentUser();
 
   if (user?.role !== "admin") {
@@ -189,8 +189,10 @@ export async function deleteTicket(id: string) {
     logEvent(`Ticket #${id} deleted successfully`, "ticket", { ticketId: id }, "info");
 
     revalidatePath("/admin");
+
+    return { success: true, message: "Ticket deleted successfully" };
   } catch (error) {
     logEvent("Error deleting ticket", "ticket", { ticketId: id }, "error", error);
-    return null;
+    return { success: false, message: "Error deleting ticket" };
   }
 }
