@@ -85,7 +85,7 @@ export async function getMyTickets() {
   }
 }
 
-// Get All Tickets Qwned by All Users
+// Get All Tickets Owned by All Users
 export async function getAllTickets() {
   try {
     const user = await getCurrentUser();
