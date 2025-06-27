@@ -96,7 +96,7 @@ export async function getAllTickets() {
     }
 
     const tickets = await prisma.ticket.findMany({
-      orderBy: { createdAt: "desc" },
+      orderBy: [{ status: "desc" }, { createdAt: "desc" }],
     });
 
     logEvent("Fetched ticket list", "ticket", { count: tickets.length }, "info");
