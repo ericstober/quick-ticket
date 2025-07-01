@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Quick Ticket Support",
+  title: "K-IT Support",
   description: "Get support for your product",
 };
 
