@@ -26,9 +26,9 @@ const LoginForm = () => {
   }, [state, router]);
 
   return (
-    <div className='min-h-screen flex items-center justify-center bg-blue-50 px-4'>
+    <div className='min-h-screen flex items-center justify-center px-4'>
       <div className='w-full max-w-md bg-white shadow-md ronded-lg p-8 border border-gray-200'>
-        <h1 className='text-3xl font-bold mb-6 text-center text-blue-600'>Login</h1>
+        <h1 className='text-3xl font-bold mb-6 text-center text-purple'>Login</h1>
 
         <form action={formAction} className='space-y-4 text-gray-700'>
           <input
@@ -37,7 +37,7 @@ const LoginForm = () => {
             placeholder='Your Email'
             autoComplete='email'
             required
-            className='w-full border border-gray-200 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-400'
+            className='w-full border border-gray-200 p-3 rounded focus:outline-none focus:ring-2 focus:ring-purple-400'
           />
 
           <input
@@ -46,12 +46,12 @@ const LoginForm = () => {
             placeholder='Password'
             autoComplete='new-password'
             required
-            className='w-full border border-gray-200 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-400'
+            className='w-full border border-gray-200 p-3 rounded focus:outline-none focus:ring-2 focus:ring-purple-400'
           />
 
           <button
             type='submit'
-            className='w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700 transition disabled:opacity-50'
+            className='w-full bg-purple text-white p-3 rounded hover:bg-purple-dark transition disabled:opacity-50'
           >
             Login
           </button>

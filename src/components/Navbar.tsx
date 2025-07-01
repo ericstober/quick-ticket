@@ -35,11 +35,14 @@ const Navbar = async () => {
           </>
         ) : (
           <>
-            <Link href='/login' className='text-blue-600 hover:underline transition'>
+            <Link href='/login' className='text-lavender hover:underline transition'>
               Login
             </Link>
 
-            <Link href='/register' className='bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition'>
+            <Link
+              href='/register'
+              className='bg-lavender text-purple px-4 py-2 rounded hover:bg-purple-dark hover:text-purple-light transition'
+            >
               Register
             </Link>
           </>
