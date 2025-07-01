@@ -11,13 +11,13 @@ const HomePage = () => {
       <div className='flex flex-col md:flex-row gap-4 justify-center animate-slide opacity-0'>
         <Link
           href='/tickets/new'
-          className='bg-purple text-white px-6 py-3 rounded shadow hover:bg-blue-700 transition'
+          className='bg-purple text-white px-6 py-3 rounded shadow hover:bg-purple-dark transition'
         >
           Submit a Ticket
         </Link>
         <Link
           href='/tickets'
-          className='bg-pink-light text-gray-700 px-6 py-3 rounded shadow hover:bg-blue-200 transition'
+          className='bg-pink-light text-gray-700 px-6 py-3 rounded shadow hover:bg-pink-dark transition'
         >
           View Tickets
         </Link>
