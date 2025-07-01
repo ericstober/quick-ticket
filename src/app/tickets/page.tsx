@@ -13,8 +13,8 @@ const TicketsPage = async () => {
   const tickets = await getMyTickets();
 
   return (
-    <div className='min-h-screen bg-blue-50 p-8'>
-      <h1 className='text-3xl font-bold text-blue-600 mb-8 text-center'>Support Tickets</h1>
+    <div className='min-h-screen p-8'>
+      <h1 className='text-3xl font-bold text-purple mb-8 text-center'>Support Tickets</h1>
       {tickets.length === 0 ? (
         <p className='text-center text-gray-600'>No Tickets Yet</p>
       ) : (
