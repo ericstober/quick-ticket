@@ -22,7 +22,7 @@ const LogoutButton = () => {
 
   return (
     <form action={formAction}>
-      <button type='submit' className='bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition'>
+      <button type='submit' className='bg-pink text-purple-light px-4 py-2 rounded hover:bg-pink-dark transition'>
         Logout
       </button>
     </form>

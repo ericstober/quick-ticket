@@ -6,27 +6,27 @@ const Navbar = async () => {
   const user = await getCurrentUser();
 
   return (
-    <nav className='bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center'>
+    <nav className='bg-purple border-b border-gray-200 px-6 py-4 flex justify-between items-center'>
       <div>
-        <Link href='/' className='text-xl font-bold text-blue-600'>
-          Quick Ticket
+        <Link href='/' className='text-xl font-bold text-purple-light'>
+          K-IT Support
         </Link>
       </div>
 
       <div className='flex items-center space-x-4'>
         {user ? (
           <>
-            <Link href='/tickets/new' className='hover:underline text-gray-700 transition'>
+            <Link href='/tickets/new' className='hover:underline text-purple-light transition'>
               New Ticket
             </Link>
 
-            <Link href='/tickets' className='hover:underline text-gray-700 transition'>
+            <Link href='/tickets' className='hover:underline text-purple-light transition'>
               My Tickets
             </Link>
 
             {/* Display AAdmin Dashboard link if the user is an admin */}
             {user.role === "admin" && (
-              <Link href='/admin' className='hover:underline text-gray-700 transition'>
+              <Link href='/admin' className='hover:underline text-purple-light transition'>
                 Admin Dashboard
               </Link>
             )}
