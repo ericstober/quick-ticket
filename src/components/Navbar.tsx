@@ -6,7 +6,7 @@ const Navbar = async () => {
   const user = await getCurrentUser();
 
   return (
-    <nav className='bg-purple-dark border-b border-gray-200 px-6 py-4 flex justify-between items-center'>
+    <nav className='bg-purple border-b border-gray-200 px-6 py-4 flex justify-between items-center'>
       <div>
         <Link href='/' className='text-xl font-bold text-purple-light'>
           K-IT Support
