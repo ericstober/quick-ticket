@@ -5,7 +5,7 @@ const HomePage = () => {
   return (
     <main className='flex flex-col text-center items-center justify-center min-h-screen px-4'>
       <FaTicketAlt className='mx-auto mb-4 text-pink' size={60} />
-      <h1 className='text-4xl md:text-5xl font-bold mb-4 text-purple'>Welcome to Quick Ticket</h1>
+      <h1 className='text-4xl md:text-5xl font-bold mb-4 text-purple'>Welcome to K-IT Support</h1>
       <p className='text-lg text-gray-600 mb-8'>Fast and simple support ticket management system.</p>
 
       <div className='flex flex-col md:flex-row gap-4 justify-center animate-slide opacity-0'>
