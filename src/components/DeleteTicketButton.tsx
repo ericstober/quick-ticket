@@ -32,7 +32,7 @@ const DeleteTicketButton = ({ ticketId }: { ticketId: number }) => {
       <input type='hidden' name='ticketId' value={ticketId} />
       <button
         type='submit'
-        className='inline-block mt-2 text-sm px-3 py-1 rounded bg-red-500 hover:bg-red-600 transition text-center text-white'
+        className='inline-block mt-2 text-sm px-3 py-1 rounded bg-red-500 hover:bg-red-600 transition text-center text-white hover:cursor-pointer'
       >
         Delete Ticket
       </button>
