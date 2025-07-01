@@ -19,7 +19,7 @@ const AdminTicketItem = ({ ticket }: TicketItemProps) => {
     >
       {/* Left Side */}
       <div>
-        <h2 className='text-xl font-semibold text-blue-600'>{ticket.subject}</h2>
+        <h2 className='text-xl font-semibold text-purple'>{ticket.subject}</h2>
       </div>
 
       {/* Right Side */}
@@ -32,7 +32,7 @@ const AdminTicketItem = ({ ticket }: TicketItemProps) => {
 
         <Link
           href={`/tickets/${ticket.id}`}
-          className='inline-block mt-2 text-sm px-3 py-1 rounded hover:bg-blue-700 transition text-center bg-blue-600 text-white'
+          className='inline-block mt-2 text-sm px-3 py-1 rounded hover:bg-purple-dark transition text-center bg-purple text-white'
         >
           View Ticket
         </Link>
