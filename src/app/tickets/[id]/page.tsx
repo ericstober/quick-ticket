@@ -28,9 +28,9 @@ const TicketDetailsPage = async (props: { params: Promise<{ id: string }> }) => 
   logEvent("Viewing ticket details", "ticket", { ticketId: ticket.id }, "info");
 
   return (
-    <div className='min-h-screen bg-blue-50 p-8'>
+    <div className='min-h-screen p-8'>
       <div className='max-w-2xl mx-auto bg-white rounded-lg shadow border border-gray-200 p-8 space-y-6'>
-        <h1 className='text-3xl font-bold text-blue-600'>{ticket.subject}</h1>
+        <h1 className='text-3xl font-bold text-purple'>{ticket.subject}</h1>
 
         <div className='text-gray-700'>
           <h2 className='text-lg font-semibold mb-2'>Description</h2>
@@ -49,7 +49,7 @@ const TicketDetailsPage = async (props: { params: Promise<{ id: string }> }) => 
 
         <Link
           href='/tickets'
-          className='inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition'
+          className='inline-block bg-purple text-white px-4 py-2 rounded hover:bg-purple-dark transition'
         >
           Back to Tickets
         </Link>

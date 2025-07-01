@@ -27,7 +27,10 @@ const CloseTicketButton = ({ ticketId, isClosed }: { ticketId: number; isClosed:
   return (
     <form action={formAction}>
       <input type='hidden' name='ticketId' value={ticketId} />
-      <button type='submit' className='bg-red-500 text-white p-3 w-full rounded hover:bg-red-600 transition'>
+      <button
+        type='submit'
+        className='bg-pink text-white p-3 w-full rounded hover:bg-pink-dark transition hover:cursor-pointer'
+      >
         Close Ticket
       </button>
     </form>
